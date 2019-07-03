@@ -1,5 +1,5 @@
 # vue-cart
-FrontEnd with golang
+Vuejs frontend with golang backend
 
 Thanks for sample code : https://github.com/crisgon/vue-cart
 
