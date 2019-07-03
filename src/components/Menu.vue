@@ -5,12 +5,6 @@
         <li class="link">
           <router-link to="/">AllProducts</router-link>
         </li>
-        <li class="link">
-          <router-link to="/smartphones">Smartphones</router-link>
-        </li>
-        <li class="link">
-          <router-link to="/notebooks">Notebooks</router-link>
-        </li>
       </ul>
     </nav>
     <slot></slot>

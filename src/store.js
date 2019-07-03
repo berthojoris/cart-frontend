@@ -12,7 +12,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 5,
                 totalReviews: 230,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Notebook Dell Inspiron i15-3567-A30P Intel Core 7ª i5 4GB',
@@ -20,7 +20,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 3.4,
                 totalReviews: 20,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Notebook Samsung Essentials E21 Intel Celeron Dual Core',
@@ -28,7 +28,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 1,
                 totalReviews: 1,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Notebook Samsung Expert X22 Intel Core 7 i5 8GB',
@@ -36,7 +36,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 4.4,
                 totalReviews: 340,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Notebook VAIO Fit 15S B1211B Intel Core i5 4GB',
@@ -44,7 +44,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 3,
                 totalReviews: 30,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Notebook Dell Alienware - i7 16GB',
@@ -52,8 +52,8 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 2,
                 totalReviews: 248,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-            },
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
+            }
         ],
 
         smartphones: [{
@@ -62,7 +62,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 0,
                 totalReviews: 0,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Smartphone Moto G 5S Dual Chip Android 7.0',
@@ -70,7 +70,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 1.5,
                 totalReviews: 11,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'iPhone 8 Dourado 64GB Tela 4.7" IOS 11',
@@ -78,7 +78,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 1,
                 totalReviews: 2,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Smartphone Samsung Galaxy S7 Edge',
@@ -86,7 +86,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 5,
                 totalReviews: 310,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Smartphone Motorola Moto G6 Plus',
@@ -94,7 +94,7 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 2.9,
                 totalReviews: 42,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
             },
             {
                 name: 'Smartphone Motorola Moto Z3 Play',
@@ -102,26 +102,26 @@ export default new Vuex.Store({
                 image: 'https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg',
                 stars: 0.5,
                 totalReviews: 1,
-                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-            },
+                details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'
+            }
         ],
-
         cartProducts: [],
         currentProduct: {},
         showModal: false,
         showPopupCart: false,
-        apiDataProduct: []
+        apiDataProduct: [],
+        dataArrived: false
     },
 
     getters: {
-        getNotebooks: state => state.notebooks,
-        getSmartphones: state => state.smartphones,
-        getAllProducts: state => state.notebooks.concat(state.smartphones),
-        getProductsInCart: state => state.cartProducts,
-        getCurrentProduct: state => state.currentProduct,
-        getShowModal: state => state.showModal,
-        getPopupCart: state => state.showPopupCart,
-        getDataFromApi: state => state.apiDataProduct,
+        getNotebooks: (state) => state.notebooks,
+        getSmartphones: (state) => state.smartphones,
+        getAllProducts: (state) => state.notebooks.concat(state.smartphones),
+        getProductsInCart: (state) => state.cartProducts,
+        getCurrentProduct: (state) => state.currentProduct,
+        getShowModal: (state) => state.showModal,
+        getPopupCart: (state) => state.showPopupCart,
+        getDataFromApi: (state) => state.apiDataProduct
     },
 
     mutations: {
@@ -140,6 +140,9 @@ export default new Vuex.Store({
         SHOW_POPUP_CART: (state) => {
             state.showPopupCart = !state.showPopupCart;
         },
+        SET_PRODUCT_STORE: (state, data) => {
+            state.apiDataProduct = data;
+        }
     },
 
     actions: {
@@ -158,28 +161,15 @@ export default new Vuex.Store({
         showOrHiddenPopupCart: (context) => {
             context.commit('SHOW_POPUP_CART');
         },
-        async openChatHistory({
-            commit,
-            dispatch
-        }, id) {
-            commit('DEFAULT')
+        async getProductList({ commit }) {
             try {
-                const response = await axios.post('/chat/history', {
-                    receiverID: id
-                })
-                const dataDB = await response.data
-                if (_.isEmpty(dataDB)) {
-                    commit('SET_EMPTY_MESSAGE_TRUE')
-                } else {
-                    commit('SET_EMPTY_MESSAGE_FALSE')
-                }
-                commit('OPEN_CHATHISTORY', dataDB)
-                commit('SET_LOADING_MESSAGE_FALSE')
-                commit('SET_PANEL_MESSAGE_TRUE')
-                dispatch('setToRead', id)
+                const response = await axios.get('http://localhost:9090/v1/items');
+                const dataDB = await response.data;
+                console.log(dataDB);
+                commit('SET_PRODUCT_STORE', dataDB);
             } catch (error) {
-                state.errorBag = error
+                state.errorBag = error;
             }
-        },
-    },
+        }
+    }
 });

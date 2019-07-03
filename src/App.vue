@@ -28,29 +28,29 @@ import popupcart from './components/Popupcart';
 import maskBg from './components/Mask';
 
 export default {
-  components: {
-    mainMenu,
-    btn,
-    popupcart,
-    maskBg,
-  },
-  methods: {
-    ...mapActions([
-      'showOrHiddenPopupCart',
-    ]),
-    hasProduct() {
-      return this.getProductsInCart.length > 0;
+    components: {
+        mainMenu,
+        btn,
+        popupcart,
+        maskBg,
     },
-    showPopupCart() {
-      this.showOrHiddenPopupCart();
+    methods: {
+        ...mapActions([
+            'showOrHiddenPopupCart',
+        ]),
+        hasProduct() {
+            return this.getProductsInCart.length > 0;
+        },
+        showPopupCart() {
+            this.showOrHiddenPopupCart();
+        },
     },
-  },
-  computed: {
-    ...mapGetters([
-      'getProductsInCart',
-      'getPopupCart',
-    ]),
-  },
+    computed: {
+        ...mapGetters([
+            'getProductsInCart',
+            'getPopupCart',
+        ]),
+    },
 };
 </script>
 

@@ -1,14 +1,14 @@
 <template>
     <ul class="listOfProducts">
-        <li v-for="(product, index) in products" :key="index" class="product">
-            <img :src="product.image" alt width="300" />
+        <li v-for="(product, index) in products.data" :key="index" class="product">
+            <img src="https://ebid.s3.amazonaws.com/upload_medbig/9/5/2/uo_1518056108-1688-12.jpg" alt width="300" />
 
             <router-link to="/product-details">
-                <h2 class="product-name" @click="addCurrentProduct(product)">{{ product.name }}</h2>
+                <h2 class="product-name" @click="addCurrentProduct(product)">{{ product.item_name }}</h2>
             </router-link>
 
             <div class="product-price">
-                <span>R$ {{ product.price }}, 00</span>
+                <span>Rp. {{ product.price }}, 00</span>
                 <span>10 x {{ Math.round(product.price / 10) }}, 00</span>
             </div>
 
