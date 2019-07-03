@@ -4,6 +4,8 @@ import AllProducts from '../components/AllProducts';
 import Product from '../components/Product';
 import CartCheckout from '../components/CartCheckout';
 import OrderList from '../components/OrderList';
+import OrderDetail from '../components/OrderDetail';
+import DeleteOrder from '../components/DeleteOrder';
 
 Vue.use(Router);
 
@@ -28,6 +30,16 @@ export default new Router({
             path: '/orders',
             name: 'Orders',
             component: OrderList,
+        },
+        {
+            path: '/order/:orderId',
+            name: 'Orderdetail',
+            component: OrderDetail,
+        },
+        {
+            path: '/order/delete/:orderId',
+            name: 'DeleteOrder',
+            component: DeleteOrder,
         },
     ],
 });

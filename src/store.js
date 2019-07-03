@@ -6,7 +6,6 @@ import router from './router';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-
     state: {
         notebooks: [{
             name: 'Notebook Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
@@ -23,7 +22,10 @@ export default new Vuex.Store({
         apiDataProduct: [],
         dataArrived: false,
         notify: false,
-        errorBag: null
+        errorBag: null,
+        orderList: [],
+        orderById: null,
+        orderDetailById: []
     },
 
     getters: {
@@ -36,7 +38,10 @@ export default new Vuex.Store({
         getPopupCart: (state) => state.showPopupCart,
         getError: (state) => state.errorBag,
         getDataFromApi: (state) => state.apiDataProduct,
-        getNotify: (state) => state.notify
+        getNotify: (state) => state.notify,
+        getOrderList: (state) => state.orderList,
+        getOrderById: (state) => state.orderById,
+        getOrderDetailById: (state) => state.orderDetailById
     },
 
     mutations: {
@@ -62,13 +67,22 @@ export default new Vuex.Store({
         ORDER_SUBMITED: (state) => {
             state.cartProducts = [];
             router.push({
-                name: "Orders"
+                name: 'Orders'
             });
             state.notify = true;
         },
         SHOW_NOTIF: (state) => {
             state.showPopupCart = !state.showPopupCart;
         },
+        GET_ORDER_LIST: (state, data) => {
+            state.orderList = data;
+        },
+        GET_ORDER_BY_ID: (state, data) => {
+            state.orderById = data;
+        },
+        GET_ORDER_DETAIL_BY_ID: (state, data) => {
+            state.orderDetailById = data;
+        }
     },
 
     actions: {
@@ -114,17 +128,38 @@ export default new Vuex.Store({
                 state.errorBag = error;
             }
         },
-        async listOrder({
+        async getListOrder({
             commit
         }) {
             try {
-                const response = await axios.post('http://localhost:9090/v1/order/', {
-                    total_amount: 10000,
-                });
+                const response = await axios.get('http://localhost:9090/v1/order/list');
                 const dataDB = await response.data;
+                commit('GET_ORDER_LIST', dataDB);
+            } catch (error) {
+                state.errorBag = error;
+            }
+        },
+        async getOrder({
+            commit
+        }, id) {
+            try {
+                const response = await axios.get('http://localhost:9090/v1/order/' + id);
+                const dataDB = await response.data;
+                commit('GET_ORDER_BY_ID', dataDB);
+            } catch (error) {
+                state.errorBag = error;
+            }
+        },
+        async getOrderDetail({
+            commit
+        }, id) {
+            try {
+                const response = await axios.get('http://localhost:9090/v1/order/detail/' + id);
+                const dataDB = await response.data;
+                commit('GET_ORDER_DETAIL_BY_ID', dataDB);
             } catch (error) {
                 state.errorBag = error;
             }
         }
     }
-})
+});
