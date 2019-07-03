@@ -11,11 +11,7 @@
                 <span>Rp.{{ product.price }}</span>
             </div>
 
-            <btn
-            btnColor="btn btn-large btn-sucess"
-            :cartIcon="true"
-            @click.native="addProductToCart(product)"
-            >Add to cart</btn>
+            <btn btnColor="btn btn-large btn-sucess" :cartIcon="true" @click.native="addProductToCart(product)">Add to cart</btn>
         </li>
     </ul>
 </template>

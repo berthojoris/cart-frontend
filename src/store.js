@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import router from './router';
 
 Vue.use(Vuex);
 
@@ -20,7 +21,9 @@ export default new Vuex.Store({
         showModal: false,
         showPopupCart: false,
         apiDataProduct: [],
-        dataArrived: false
+        dataArrived: false,
+        submitReady: true,
+        notify: false
     },
 
     getters: {
@@ -31,13 +34,15 @@ export default new Vuex.Store({
         getCurrentProduct: (state) => state.currentProduct,
         getShowModal: (state) => state.showModal,
         getPopupCart: (state) => state.showPopupCart,
-        getDataFromApi: (state) => state.apiDataProduct
+        getDataFromApi: (state) => state.apiDataProduct,
+        showHideSubmit: (state) => state.submitReady,
+        getNotify: (state) => state.notify
     },
 
     mutations: {
         ADD_PRODUCT: (state, product) => {
+            state.notify = false;
             state.cartProducts.push(product);
-            console.log(product);
         },
         REMOVE_PRODUCT: (state, index) => {
             state.cartProducts.splice(index, 1);
@@ -53,7 +58,18 @@ export default new Vuex.Store({
         },
         SET_PRODUCT_STORE: (state, data) => {
             state.apiDataProduct = data;
-        }
+        },
+        ORDER_SUBMITED: (state) => {
+            state.cartProducts = [];
+            state.submitReady = false;
+            router.push({
+                name: "Orders"
+            });
+            state.notify = true;
+        },
+        SHOW_NOTIF: (state) => {
+            state.showPopupCart = !state.showPopupCart;
+        },
     },
 
     actions: {
@@ -80,6 +96,26 @@ export default new Vuex.Store({
                 const dataDB = await response.data;
                 console.log(dataDB);
                 commit('SET_PRODUCT_STORE', dataDB);
+            } catch (error) {
+                state.errorBag = error;
+            }
+        },
+        async createOrder({
+            commit
+        }) {
+            try {
+                const response = await axios.post('http://localhost:9090/v1/order/save', {
+                    total_amount: 10000,
+                    detail: [{
+                        "item_id": 1,
+                        "qty": 7
+                    }, {
+                        "item_id": 2,
+                        "qty": 2
+                    }]
+                });
+                const dataDB = await response.data;
+                commit('ORDER_SUBMITED');
             } catch (error) {
                 state.errorBag = error;
             }

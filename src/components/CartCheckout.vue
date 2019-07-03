@@ -14,25 +14,30 @@
             <h3>No products...</h3>
             <router-link to="./">Back to list of products</router-link>
         </div>
-        <h3 class="total" v-if="hasProduct()">
-        Total: Rp.{{ totalPrice() }}
-        </h3>
+        <h3 class="total" v-if="hasProduct()">Total: Rp.{{ totalPrice() }}</h3>
+
+        <btn v-if="showHideSubmit" btnColor="btn btn-large btn-sucess" @click.native="createOrder()">Create Order</btn>
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import btn from './Btn';
 
 export default {
+    components: {
+        btn,
+    },
     computed: {
         ...mapGetters([
-            'getProductsInCart',
+            "getProductsInCart",
+            "showHideSubmit"
         ]),
     },
-
     methods: {
         ...mapActions([
-            'removeProduct',
+            "removeProduct",
+            "createOrder"
         ]),
         hasProduct() {
             return this.getProductsInCart.length > 0;
@@ -49,7 +54,11 @@ export default {
 </script>
 
 <style scoped>
-  .checkout-box {
+.notif {
+    margin-top:20px;
+}
+
+.checkout-box {
     width: 100%;
     max-width: 900px;
     display: flex;
@@ -57,13 +66,13 @@ export default {
     margin: 50px auto;
     box-sizing: border-box;
     padding: 1em;
-  }
+}
 
-  .checkout-list {
+.checkout-list {
     padding: 0;
-  }
+}
 
-  .checkout-product {
+.checkout-product {
     display: grid;
     grid-template-columns: 1fr 3fr 2fr .5fr;
     background-color: #fff;
@@ -73,26 +82,26 @@ export default {
     box-sizing: border-box;
     padding: .8em;
     margin: 1em 0;
-  }
+}
 
-  .checkout-product * {
+.checkout-product * {
     place-self: center;
-  }
-  .product-image {
+}
+.product-image {
     grid-column: 1/2;
     width: 50%;
-  }
+}
 
-  .product-name {
+.product-name {
     box-sizing: border-box;
-  }
+}
 
-  .product-price {
+.product-price {
     font-size: 1.2em;
     font-weight: bold;
-  }
+}
 
-  .product-remove {
+.product-remove {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -100,24 +109,52 @@ export default {
     background-color: #E0E0E0;
     color: #fff;
     cursor: pointer;
-  }
+}
 
-  .total {
+.total {
     font-size: 2em;
     font-weight: bold;
     align-self: flex-end;
-  }
+}
 
-  .checkout-message {
-    font-size: 1.5em;
-  }
+.checkout-message {
+ font-size: 1.5em;
+}
 
-  .fade-enter-active, .fade-leave-active {
-    transition: all .5s;
-  }
+.fade-enter-active, .fade-leave-active {
+transition: all .5s;
+}
 
-  .fade-enter, .fade-leave-to {
+.fade-enter, .fade-leave-to {
     transform: translateX(-40px);
     opacity: 0;
-  }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
 </style>

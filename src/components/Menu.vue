@@ -1,14 +1,13 @@
 <template>
-  <header class="header">
-    <nav class="nav">
-      <ul class="nav-links">
-        <li class="link">
-          <router-link to="/">AllProducts</router-link>
-        </li>
-      </ul>
-    </nav>
-    <slot></slot>
-  </header>
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-links">
+                <li class="link"><router-link to="/">All Products</router-link></li>
+                <li class="link"><router-link to="/orders">Orders</router-link></li>
+            </ul>
+        </nav>
+        <slot></slot>
+    </header>
 </template>
 
 <script>
