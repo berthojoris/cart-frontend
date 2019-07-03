@@ -71,6 +71,9 @@ export default new Vuex.Store({
             });
             state.notify = true;
         },
+        NOTIF_OFF: () => {
+            state.notify = false;
+        },
         SHOW_NOTIF: (state) => {
             state.showPopupCart = !state.showPopupCart;
         },
@@ -82,6 +85,11 @@ export default new Vuex.Store({
         },
         GET_ORDER_DETAIL_BY_ID: (state, data) => {
             state.orderDetailById = data;
+        },
+        DELETE_ORDER: () => {
+            router.push({
+                name: 'Orders'
+            });
         }
     },
 
@@ -101,9 +109,7 @@ export default new Vuex.Store({
         showOrHiddenPopupCart: (context) => {
             context.commit('SHOW_POPUP_CART');
         },
-        async getProductList({
-            commit
-        }) {
+        async getProductList({ commit }) {
             try {
                 const response = await axios.get('http://localhost:9090/v1/items');
                 const dataDB = await response.data;
@@ -112,10 +118,7 @@ export default new Vuex.Store({
                 state.errorBag = error;
             }
         },
-        async createOrder({
-            commit,
-            state
-        }, amount) {
+        async createOrder({ commit, state }, amount) {
             try {
                 console.log(state.showPopupCart);
                 const response = await axios.post('http://localhost:9090/v1/order/save', {
@@ -128,9 +131,7 @@ export default new Vuex.Store({
                 state.errorBag = error;
             }
         },
-        async getListOrder({
-            commit
-        }) {
+        async getListOrder({ commit }) {
             try {
                 const response = await axios.get('http://localhost:9090/v1/order/list');
                 const dataDB = await response.data;
@@ -139,9 +140,7 @@ export default new Vuex.Store({
                 state.errorBag = error;
             }
         },
-        async getOrder({
-            commit
-        }, id) {
+        async getOrder({ commit }, id) {
             try {
                 const response = await axios.get('http://localhost:9090/v1/order/' + id);
                 const dataDB = await response.data;
@@ -150,13 +149,22 @@ export default new Vuex.Store({
                 state.errorBag = error;
             }
         },
-        async getOrderDetail({
-            commit
-        }, id) {
+        async getOrderDetail({ commit }, id) {
             try {
                 const response = await axios.get('http://localhost:9090/v1/order/detail/' + id);
                 const dataDB = await response.data;
                 commit('GET_ORDER_DETAIL_BY_ID', dataDB);
+            } catch (error) {
+                state.errorBag = error;
+            }
+        },
+        async deleteOrder({ commit, dispatch }, id) {
+            try {
+                const response = await axios.get('http://localhost:9090/v1/order/delete/' + id);
+                const dataDB = await response.data;
+                commit('DELETE_ORDER');
+                dispatch('getListOrder');
+                commit('NOTIF_OFF');
             } catch (error) {
                 state.errorBag = error;
             }
