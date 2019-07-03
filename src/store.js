@@ -101,11 +101,11 @@ export default new Vuex.Store({
         async createOrder({
             commit,
             state
-        }) {
+        }, amount) {
             try {
                 console.log(state.showPopupCart);
                 const response = await axios.post('http://localhost:9090/v1/order/save', {
-                    total_amount: 10000,
+                    total_amount: amount,
                     detail: state.cartProducts
                 });
                 const dataDB = await response.data;
