@@ -1,11 +1,7 @@
 # vue-cart
+FrontEnd with golang
 
-> A Vue.js project
-> This project was made using vue, vuex and vue-router.
-
-### https://crisgon.github.io/vue-cart/dist/
-
-![Shop Cart](https://i.imgur.com/yKYJdV3.gif)
+Thanks for sample code : https://github.com/crisgon/vue-cart
 
 ## Build Setup
 
