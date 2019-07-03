@@ -1,22 +1,23 @@
 <template>
-  <div class="box">
-    <span v-if="!hasProduct()">No products :/</span>
-    <div v-for="(product, index) in getProductsInCart"  :key="index" class="box-item">
-      <img :src="product.image" alt="" class="item-thumb">
-      <h3 class="item-name">{{ product.name }}</h3>
-      <span class="item-amount">Amount: 1</span>
-      <span class="item-price">R$ {{ product.price }}, 00</span>
+    <div class="box">
+        <span v-if="!hasProduct()">No products :/</span>
+
+        <div v-for="(product, index) in getProductsInCart"  :key="index" class="box-item">
+            <img src="@/assets/images/sepatu.jpg" class="item-thumb">
+            <h3 class="item-name">{{ product.item_name }}</h3>
+            <span class="item-price">Rp.{{ product.price }}</span>
+        </div>
+
+        <div class="cart-info" v-if="hasProduct()">
+            <span>Total: Rp {{ totalPrice() }}</span>
+            <router-link to="/checkout">
+                <btn btnColor="btn btn-small btn-info"
+                    @click.native="showPopupCart()">
+                    View cart
+                </btn>
+            </router-link>
+        </div>
     </div>
-    <div class="cart-info" v-if="hasProduct()">
-      <span>Total: R$ {{ totalPrice() }}, 00</span>
-      <router-link to="/checkout">
-        <btn btnColor="btn btn-small btn-info"
-          @click.native="showPopupCart()">
-          View cart
-        </btn>
-      </router-link>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -24,29 +25,30 @@ import { mapGetters, mapActions } from 'vuex';
 import btn from './Btn';
 
 export default {
-  components: {
-    btn,
-  },
-  methods: {
-    ...mapActions([
-      'showOrHiddenPopupCart',
-    ]),
-    hasProduct() {
-      return this.getProductsInCart.length > 0;
+    components: {
+        btn,
     },
-    totalPrice() {
-      return this.getProductsInCart.reduce((current, next) =>
-        current + next.price, 0);
+    methods: {
+        ...mapActions([
+            'showOrHiddenPopupCart',
+        ]),
+        hasProduct() {
+            return this.getProductsInCart.length > 0;
+        },
+        totalPrice() {
+            return this.getProductsInCart.reduce((current, next) =>
+            current + next.price, 0);
+        },
+        showPopupCart() {
+            this.showOrHiddenPopupCart();
+        },
     },
-    showPopupCart() {
-      this.showOrHiddenPopupCart();
+    computed: {
+        ...mapGetters([
+            'getDataFromApi',
+            'getProductsInCart',
+        ]),
     },
-  },
-  computed: {
-    ...mapGetters([
-      'getProductsInCart',
-    ]),
-  },
 };
 </script>
 
