@@ -16,7 +16,7 @@
         </div>
         <h3 class="total" v-if="hasProduct()">Total: Rp.{{ totalPrice() }}</h3>
 
-        <btn v-if="showHideSubmit" btnColor="btn btn-large btn-sucess" @click.native="createOrder()">Create Order</btn>
+        <btn v-if="getProductsInCart.length > 0" btnColor="btn btn-large btn-sucess" @click.native="createOrder()">Create Order</btn>
     </div>
 </template>
 
@@ -31,7 +31,6 @@ export default {
     computed: {
         ...mapGetters([
             "getProductsInCart",
-            "showHideSubmit"
         ]),
     },
     methods: {
